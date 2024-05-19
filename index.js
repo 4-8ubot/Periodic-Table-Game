@@ -1,10 +1,10 @@
 import ptable from "./ptable.js";
 
 function generateQuestion(ans) {
-  this.ans = ans;
+  this.ans = arguments[0];
   var input = $("<input class='ifield'/>");
   input.on("input", function () {
-    if ($(this).val() == ans) {
+    if ($(this).val() ==  arguments[0]) {
       $(this)[0].disabled = true;
       $(this).css("background-color", "#1dd1a1");
       $(this).css("border-bottom", "dashed #10ac84 3px");
