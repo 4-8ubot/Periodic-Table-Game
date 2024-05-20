@@ -1,13 +1,6 @@
 import ptable from "./ptable.js";
 class Question {
-  constructor() {
-    const questionAnswer = arguments[0];
-
-    this.questionAnswer = questionAnswer;
-  }
-}
-function generateQuestion(ans) {
-  this.ans = arguments[0];
+  constructor() { this.ans = arguments[0];
   var input = $("<input class='ifield'/>");
   input.on("input", function () {
     if ($(this).val() ==  arguments[0]) {
@@ -20,6 +13,10 @@ function generateQuestion(ans) {
     }
   });
   return input;
+  }
+}
+function generateQuestion(ans) {
+ 
 }
 
 var random = Math.floor(Math.random() * ptable.elements.length) + 1;
