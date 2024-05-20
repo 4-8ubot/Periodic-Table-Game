@@ -1,5 +1,5 @@
 import ptable from "./ptable.js";
-
+class Question {}
 function generateQuestion(ans) {
   this.ans = arguments[0];
   var input = $("<input class='ifield'/>");
