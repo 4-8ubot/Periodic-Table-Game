@@ -1,7 +1,9 @@
 import ptable from "./ptable.js";
 class Question {
-  constructor(answer) {
-    
+  constructor() {
+    const questionAnswer = arguments[0];
+
+    this.questionAnswer = questionAnswer;
   }
 }
 function generateQuestion(ans) {
