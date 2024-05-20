@@ -1,8 +1,10 @@
 import ptable from "./ptable.js";
+
 class Question {
-  constructor() { this.ans = arguments[0];
-  var input = $("<input class='ifield'/>");
-  input.on("input", function () {
+  constructor() {
+    this.ans = arguments[0];
+    var input = $("<input class='ifield'/>");
+    input.on("input", function () {
     if ($(this).val() ==  arguments[0]) {
       $(this)[0].disabled = true;
       $(this).css("background-color", "#1dd1a1");
@@ -15,20 +17,17 @@ class Question {
   return input;
   }
 }
-function generateQuestion(ans) {
- 
-}
 
 var random = Math.floor(Math.random() * ptable.elements.length) + 1;
 var chosen = ptable.elements[random];
 console.log(chosen.image.url);
 
 var qhash = {
-  1: generateQuestion(Math.round(chosen.number)),
-  2: generateQuestion(Math.round(chosen.atomic_mass - chosen.number)),
-  3: generateQuestion(Math.round(chosen.number)),
-  4: generateQuestion(chosen.atomic_mass),
-  5: generateQuestion(chosen.block),
+  1: new Question(Math.round(chosen.number)),
+  2: new Question(Math.round(chosen.atomic_mass - chosen.number)),
+  3: new Question(Math.round(chosen.number)),
+  4: new Question(chosen.atomic_mass),
+  5: new Question(chosen.block),
 };
 console.log(qhash);
 $("<div>")
